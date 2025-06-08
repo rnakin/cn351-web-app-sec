@@ -1,0 +1,69 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.form-container {
+    width: 380px;
+    margin: 100px auto;
+    padding: 30px;
+    border: 4px solid #be1f0c;
+    border-radius: 15px;
+    /*background-color: #fff6f6;*/
+    /*box-shadow: 0 0 15px rgba(190, 31, 12, 0.3);*/
+}
+
+h1 {
+    text-align: center;
+    color: #be1f0c;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #be1f0c;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+input:-webkit-autofill {
+    background-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #000 !important;
+}
+
+.btn-group {
+    text-align: center;
+}
+
+.btn-login {
+    background-color: #be1f0c;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #a81b09;
+}
