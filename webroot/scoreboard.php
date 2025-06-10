@@ -6,6 +6,42 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
+//This following section detecting session timeout
+//check if session timeout is set and more than 0 == timeout is set
+// if there is a timeout set; there is a timeout and  is greater or equal to 0. :
+    // if the last activity is set and the timeout has expired :
+        // clear session data
+        // kill the session
+        // kick out to login
+        // terminate the current php scripts 
+//else if the time out is set and not expired :
+    // update last activity 
+    //good to go
+//else (the time out is not set)
+// 
+//                                                                      :rnakin
+
+if(isset($_SESSION['TIMEOUT']) && ($_SESSION['TIMEOUT']>=0)){  
+    if(isset($_SESSION['LAST_ACTIVITY'])&& (time() - $_SESSION['LAST_ACTIVITY'])>$_SESSION['TIMEOUT']){   
+        session_unset();                                                                
+        session_destroy();                                                              
+        header('Location:login.php')  ;                                                  
+        exit();                                                               
+    }else{                                                                              
+        $_SESSION['LAST_ACTIVITY'] = time();   //update last activity
+        session_regenerate_id(true);           //regenerate session id 
+    }                                                                                               
+}else if(isset($_SESSION['TIMEOUT'])&&($_SESSION['TIMEOUT']<=0)){       // not check "Keep me loged in"                                       
+    session_unset();                                                                
+    session_destroy();
+    exit();
+}else{
+    header("Location: login.php");
+    exit();
+}
+
+
+
 $user = $_SESSION['user'];
 ?>
 

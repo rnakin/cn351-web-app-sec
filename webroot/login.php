@@ -8,6 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['student_id'] ?? '';
     $pw = $_POST['student_pw'] ?? '';
 
+    //set timeout
+    $_SESSION['TIMEOUT'] = 0;
+    if (isset($_POST['remember_me'])) {
+        $_SESSION['TIMEOUT'] = 900; // 15 Minutes
+    }
+
     $query = "SELECT * FROM score WHERE student_id = '$id' AND student_pw = '$pw'";
     $result = mysqli_query($link, $query);
 
@@ -43,7 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="student_pw">Password</label>
             <input type="password" name="student_pw" id="student_pw" required>
         </div>
-
+        <div class="btn-group"> <!-- remember me button -->
+            <input type="checkbox"  id="remember_me" name="remember_me" value="remember_me" >
+            <label for="remember_me"class="checkbox" style="display: inline-block;"> Remember me</label>
+        </div>
         <div class="btn-group">
             <button type="submit" class="btn-login">Log in</button>
         </div>
