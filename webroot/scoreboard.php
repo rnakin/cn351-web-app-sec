@@ -73,7 +73,7 @@ $user = $_SESSION['user'];
 </head>
 <body>
 
-<h1><?= htmlspecialchars($user['fullname']) ?></h1>
+<h1><?= ($user['fullname']) ?></h1>
 <p>Student ID: <?= htmlspecialchars($user['student_id']) ?></p>
 
 <table>
