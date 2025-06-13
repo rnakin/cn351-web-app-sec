@@ -96,9 +96,9 @@ $user = $_SESSION['user'];
         <th><?= htmlspecialchars($user['sum']) ?></th>
     </tr>
 </table>
-<!-- <div class="password">
+<div class="password">
     <a href="change_password.php">Change your password</a>
-</div> -->
+</div>
 <div class="logout">
     <a href="logout.php">Log out</a>
 </div>
