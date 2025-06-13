@@ -69,6 +69,10 @@ $user = $_SESSION['user'];
             text-align: center;
             margin-top: 20px;
         }
+        .password {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +96,9 @@ $user = $_SESSION['user'];
         <th><?= htmlspecialchars($user['sum']) ?></th>
     </tr>
 </table>
-
+<div class="password">
+    <a href="change_password.php">Change your password</a>
+</div>
 <div class="logout">
     <a href="logout.php">Log out</a>
 </div>

