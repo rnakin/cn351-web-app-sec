@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         
         <?php if (isset($message)): ?>
-            <p style="text-align:center; color: green; margin-top: 10px;"><?= $message ?></p>
+            <p style="text-align:center; color: green;"><?= $message ?></p>
         <?php endif; ?>
         
     </form>
